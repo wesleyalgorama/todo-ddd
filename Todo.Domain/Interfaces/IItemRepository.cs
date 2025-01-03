@@ -7,5 +7,7 @@ public interface IItemRepository
 {
     IEnumerable<Item> GetItems();
     Item GetItem(Guid id);
-    void ChangeStatus(Status status);
+    void CreateItem(Item item);
+    void ChangeItemStatus(Guid id, Status status);
+    void DeleteItem(Guid id);
 }

@@ -17,7 +17,7 @@ public class Item
         Status = Status.Todo;
     }
 
-    public void ChangeStatus(Status status)
+    public void ChangeItemStatus(Status status)
     {
         Status = status;
     }

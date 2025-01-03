@@ -23,8 +23,18 @@ public class ItemService
         return _itemRepository.GetItem(id);
     }
 
-    public void ChangeStatus(Status status)
+    public void CreateItem(Item item)
     {
-        _itemRepository.ChangeStatus(status);
+        _itemRepository.CreateItem(item);
+    }
+
+    public void ChangeItemStatus(Guid id, Status status)
+    {
+        _itemRepository.ChangeItemStatus(id, status);
+    }
+
+    public void DeleteItem(Guid id)
+    {
+        _itemRepository.DeleteItem(id);
     }
 }

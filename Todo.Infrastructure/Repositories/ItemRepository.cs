@@ -8,18 +8,39 @@ using Todo.Domain.Interfaces;
 
 public class ItemRepository : IItemRepository
 {
-    public void ChangeStatus(Status status)
+    private readonly List<Item> _items;
+
+    public ItemRepository()
     {
-        throw new NotImplementedException();
+        _items = new List<Item>();
     }
 
     public Item GetItem(Guid id)
     {
-        throw new NotImplementedException();
+        var item = _items.FirstOrDefault(item => item.Id == id);
+        if (item == null) throw new Exception("Not found");
+        return item;
     }
 
     public IEnumerable<Item> GetItems()
     {
-        throw new NotImplementedException();
+        return _items;
+    }
+
+    public void CreateItem(Item item)
+    {
+        _items.Add(item);
+    }
+
+    public void ChangeItemStatus(Guid id, Status status)
+    {
+        var item = GetItem(id);
+        item.ChangeItemStatus(status);
+    }
+
+    public void DeleteItem(Guid id)
+    {
+        var item = GetItem(id);
+        _items.Remove(item);
     }
 }
