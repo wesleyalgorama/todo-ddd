@@ -26,7 +26,7 @@ This project implements a simple backend for a todo application using ASP.NET Co
 **2 - lone the repository**
 
 ```bash
-git clone https://github.com/your-username/todo-api.git
+git clone https://github.com/wesleyalgorama/todo-api.git
 cd todo-api
 ```
 
