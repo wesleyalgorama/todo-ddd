@@ -10,31 +10,58 @@ This project implements a simple backend for a todo application using ASP.NET Co
 
 * [About](#about)
 * [Getting Started](#getting-started)
-* [Usage](#Usage)
-* [Contributing](#Contributing)
-* [Licensing](#Licensing)
+    * [Running Locally](#running-locally)
+    * [Running with Docker](#running-with-docker)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Licensing](#licensing)
 
 ## Getting Started
 
-### Prerequisites
+### Running Locally
+**1 - Prerequisites**
 
 * [.NET 9 SDK](https://dotnet.microsoft.com/en-us/download)
 
-### Install
-
-Clone the repository:
+**2 - lone the repository**
 
 ```bash
 git clone https://github.com/your-username/todo-api.git
 cd todo-api
 ```
 
-### Run
-
-To run the API locally:
+**3 - To run the API locally**
 
 ```bash
 dotnet run --project Todo.Api
+```
+
+### Running with Docker
+
+**1 - To build the Docker image**
+
+```bash
+docker build -t todo-api .
+```
+
+**2 - To run the container**
+
+```bash
+docker run -d -p 8080:8080 --name todo-api todo-api
+```
+
+This will start the API inside a Docker container and expose it on port 8080.
+You can then access Swagger UI at:
+
+```bash
+http://localhost:8080/swagger-ui/index.html
+```
+
+To stop and remove the container:
+
+```bash
+docker stop todo-api
+docker rm todo-api
 ```
 
 ## Usage
@@ -74,7 +101,9 @@ Content-Type: application/json
 ```
 
 ## Contributing
+
 If you’d like to contribute, feel free to open an issue or submit a pull request. All contributions are welcome!
 
 ## Licensing
+
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
